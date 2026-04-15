@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GamePulse | Trending Games Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="PCstyles.css">
+</head>
+
+<body class="dark-mode">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <i class="fas fa-gamepad"></i> GamePulse
+    </div>
+
+    <div class="menu-icon" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="navList">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="PC.html">PC games</a></li>
+      <li><a href="Mobile.html">Mobile</a></li>
+      <li><a href=""></a></li>
+    </ul>
+
+    <button class="theme-toggle" id="themeToggleBtn">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero-pc">
+  <div class="container hero-pc-content">
+    <i class="fas fa-fire" style="font-size: 3rem; color: #ef4444;"></i>
+    <h1>Trending Games Hub</h1>
+    <p>Discover the hottest trending games right now across PC, console, and mobile. Stay updated with what the world is playing.</p>
+    
+    <div style="margin-top: 24px;">
+      <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TOP TRENDING -->
+<section id="top-picks" class="section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-fire"></i> Top Trending Games</h2>
+
+    <div class="games-grid">
+
+      <div class="game-card">
+	  		    <img src="monkey.webp" class="game-img">
+
+        <h3>Black Myth: Wukong</h3>
+        <span class="game-genre">Action / Adventure</span>
+        <p>Massive global hit with stunning visuals and deep combat mechanics.</p>
+        <div class="game-stats">
+          <span>#1 Trending April</span>
+        </div>
+      </div>
+
+      <div class="game-card">
+	  	  		    <img src="helldivers.jpg" class="game-img">
+
+        <h3>Helldivers 2</h3>
+        <span class="game-genre">Co-op Shooter</span>
+        <p>Explosive teamwork chaos and ongoing live updates keep it trending.</p>
+        <div class="game-stats">
+          <span>400k+ players</span>
+        </div>
+      </div>
+
+      <div class="game-card">
+	  		  <img src="valorant.webp" class="game-img">
+
+        <h3>Valorant</h3>
+        <span class="game-genre">FPS / Esports</span>
+        <p>Still dominating esports with constant updates and new agents.</p>
+        <div class="game-stats">
+          <span>20M+ monthly players</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING NOW -->
+<section id="all-games" class="section">
+  <div class="container">
+    <h2 class="section-title">🔥 Trending Now</h2>
+
+    <div class="games-grid">
+
+      <div class="game-card">
+	  <img src="Palworld.jpg" class="game-img">
+        <h3>Palworld</h3>
+        <span class="game-genre">Survival</span>
+        <p>Still viral with massive player base and new updates.</p>
+      </div>
+
+      <div class="game-card">
+	  <img src="Genshin.jpg" class="game-img">
+        <h3>Genshin Impact</h3>
+        <span class="game-genre">RPG</span>
+        <p>New region updates keep players engaged worldwide.</p>
+      </div>
+
+      <div class="game-card">
+	  	<img src="Warzone.jpg" class="game-img">
+        <h3>Warzone Mobile</h3>
+        <span class="game-genre">Battle Royale</span>
+        <p>Explosive launch making waves globally.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING -->
+<section id="upcoming" class="section">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-clock"></i> Upcoming Trends</h2>
+
+    <div class="games-grid">
+
+      <div class="game-card">
+        <h3>GTA VI</h3>
+        <span class="game-genre">Open World</span>
+        <p>Expected to dominate the gaming industry upon release.</p>
+      </div>
+
+      <div class="game-card">
+        <h3>Hollow Knight: Silksong</h3>
+        <span class="game-genre">Indie / Adventure</span>
+        <p>Highly anticipated sequel with huge community hype.</p>
+      </div>
+
+      <div class="game-card">
+        <h3>Monster Hunter Wilds</h3>
+        <span class="game-genre">Action RPG</span>
+        <p>Next-gen evolution of monster hunting gameplay.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>🔥 GamePulse Trending Hub — Stay ahead of the curve © 2026</p>
+</footer>
+
+<button class="back-to-top" id="backToTopBtn">↑</button>
+
+<script>
+(function() {
+      const body = document.body;
+      const themeToggle = document.getElementById('themeToggleBtn');
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navList = document.getElementById('navList');
+      const backToTop = document.getElementById('backToTopBtn');
+      
+      // Theme logic
+      function setTheme(theme) {
+        if(theme === 'light') {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          localStorage.setItem('gamepulse-theme', 'light');
+          const icon = themeToggle.querySelector('i');
+          if(icon) icon.className = 'fas fa-sun';
+        } else {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          localStorage.setItem('gamepulse-theme', 'dark');
+          const icon = themeToggle.querySelector('i');
+          if(icon) icon.className = 'fas fa-moon';
+        }
+      }
+      
+      const saved = localStorage.getItem('gamepulse-theme');
+      if(saved === 'light') setTheme('light');
+      else setTheme('dark');
+      
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          body.classList.contains('light-mode') ? setTheme('dark') : setTheme('light');
+        });
+      }
+      
+      // Mobile menu
+      if(mobileBtn && navList) {
+        mobileBtn.addEventListener('click', () => navList.classList.toggle('mobile-open'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => navList.classList.remove('mobile-open'));
+        });
+      }
+      
+      // Back to top
+      if(backToTop) {
+        window.addEventListener('scroll', () => {
+          if(window.scrollY > 400) backToTop.classList.add('show');
+          else backToTop.classList.remove('show');
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+      
+      // Toast message
+      function showMessage(msg) {
+        const toast = document.createElement('div');
+        toast.innerText = msg;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '30px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = '#1e293b';
+        toast.style.color = '#f1f5f9';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = '48px';
+        toast.style.fontSize = '0.9rem';
+        toast.style.fontWeight = '500';
+        toast.style.zIndex = '9999';
+        toast.style.backdropFilter = 'blur(12px)';
+        toast.style.border = '1px solid #3b82f6';
+        if(body.classList.contains('light-mode')) {
+          toast.style.backgroundColor = '#ffffff';
+          toast.style.color = '#0f172a';
+        }
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 2200);
+      }
+      
+      // Game buttons interaction - Mobile specific messages
+      const btns = document.querySelectorAll('.card-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const game = btn.getAttribute('data-game') || 'game';
+          const messages = {
+            genshin: '🎮 Genshin Impact: Version 4.6 adds new region Fontaine! New characters coming soon.',
+            codm: '🔫 Call of Duty: Mobile: Season 4 live! New battle pass and Alcatraz map update.',
+            starrail: '⭐ Honkai: Star Rail: Version 2.1 adds Penacony story arc and new 5-star characters!',
+            mlbb: '⚔️ Mobile Legends: New hero "Cici" released. MPL season ongoing!',
+            pubgm: '🪖 PUBG Mobile: 3.0 update with new Rondo map and gameplay mechanics.',
+            amongus: '👾 Among Us: New hide-and-seek mode and cosmicube rewards available!',
+            clashroyale: '👑 Clash Royale: Evolution cards added. New ranked season started!',
+            roblox: '🎮 Roblox: The Hunt event live! Play featured games for exclusive items.',
+            squad: '⚡ Squad Busters: New world and characters added in latest patch!',
+            warzone: '📱 Warzone Mobile: Season 3 reloaded with new Verdansk POIs!',
+            zzz: '🎯 Zenless Zone Zero: Final beta testing. Pre-registration rewards available!',
+            mhout: '🏹 Monster Hunter Outlanders: Official gameplay trailer released. Sign up now!'
+          };
+          const msg = messages[game] || `✨ ${btn.closest('.game-card')?.querySelector('h3')?.innerText || 'Mobile game'} info: Check App Store for latest updates!`;
+          showMessage(msg);
+        });
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = this.getAttribute('href');
+          if(target === '#') return;
+          const el = document.querySelector(target);
+          if(el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth' });
+            if(navList?.classList.contains('mobile-open')) navList.classList.remove('mobile-open');
+          }
+        });
+      });
+      
+      if(window.scrollY > 400 && backToTop) backToTop.classList.add('show');
+    })();
+  </script>>
+
+</body>
+</html>

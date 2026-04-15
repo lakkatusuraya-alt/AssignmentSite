@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LOL ;p Games | Mobile/iOS Gaming Hub - Ultimate Mobile Gaming Library</title>
+
+<!-- Google Fonts + modern fallback -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="PCstyles.css">
+
+<style>
+  /* Additional inline styles for Mobile/iOS Hub page */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.25s ease, color 0.2s ease;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  body.light-mode {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  body.dark-mode {
+    background: #0a0c10;
+    color: #eef2ff;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.2s;
+  }
+
+  body.light-mode .site-header {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: inherit;
+    transition: 0.2s;
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover {
+    color: #3b82f6;
+  }
+
+  .theme-toggle {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    color: #facc15;
+  }
+
+  body.light-mode .theme-toggle {
+    background: #e2e8f0;
+    color: #1e293b;
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.05);
+    background: #3b82f6;
+    color: white;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* Hero Mobile Section */
+  .hero-mobile {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    padding: 100px 0 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  body.light-mode .hero-mobile {
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    color: #0f172a;
+  }
+
+  .hero-mobile-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-mobile h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .hero-mobile p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(59,130,246,0.12);
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #3b82f6;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  .back-link:hover {
+    background: #3b82f6;
+    color: white;
+  }
+
+  /* Sections */
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 48px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 4px;
+  }
+
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .game-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    border-radius: 28px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 12px 28px -8px rgba(0,0,0,0.2);
+  }
+
+  body.light-mode .game-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  }
+
+  .game-card:hover {
+    transform: translateY(-8px);
+    border-color: #3b82f6;
+    box-shadow: 0 24px 40px -12px rgba(59,130,246,0.3);
+  }
+
+  .game-icon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    color: #3b82f6;
+  }
+
+  .game-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .game-genre {
+    display: inline-block;
+    background: rgba(59,130,246,0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #3b82f6;
+  }
+
+  .game-card p {
+    opacity: 0.8;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+  }
+
+  .game-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  body.light-mode .game-stats {
+    border-top-color: #e2e8f0;
+  }
+
+  .game-stats i {
+    margin-right: 6px;
+    color: #3b82f6;
+  }
+
+  .card-btn {
+    background: transparent;
+    border: 1.5px solid #3b82f6;
+    color: #3b82f6;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.85rem;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .card-btn:hover {
+    background: #3b82f6;
+    color: white;
+  }
+
+  .footer {
+    background: #030712;
+    padding: 48px 32px 32px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+  }
+
+  body.light-mode .footer {
+    background: #eef2ff;
+    color: #1e293b;
+  }
+
+  .footer p {
+    opacity: 0.7;
+    font-size: 0.85rem;
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+  }
+
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(59, 130, 246, 0.6);
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+  }
+
+  .back-to-top i {
+    color: white;
+    font-size: 1.6rem;
+    transition: transform 0.2s;
+  }
+
+  .back-to-top:hover i {
+    transform: translateY(-2px);
+  }
+
+  body.light-mode .back-to-top {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  }
+
+  @media (max-width: 600px) {
+    .back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 46px;
+      height: 46px;
+    }
+    .back-to-top i { font-size: 1.3rem; }
+  }
+
+  @media (max-width: 800px) {
+    .header-inner { padding: 14px 20px; }
+    .nav-links { gap: 1.2rem; }
+    .section { padding: 50px 0; }
+    .container { padding: 0 20px; }
+    .games-grid { grid-template-columns: 1fr; }
+    .hero-mobile h1 { font-size: 2.2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .menu-icon { display: block; }
+    .nav-links.mobile-open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(15,23,42,0.95);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      gap: 1.5rem;
+      border-bottom: 1px solid #334155;
+    }
+    body.light-mode .nav-links.mobile-open {
+      background: rgba(255,255,255,0.97);
+    }
+  }
+</style>
+</head>
+
+<body class="dark-mode">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <i class="fas fa-gamepad" style="margin-right: 8px;"></i> LOL ;p Games
+      </div>
+      <div class="menu-icon" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Home</a></li>
+      <li><a href="PC.html">PC games</a></li>
+      <li><a href="trending.html">Trending Game :P</a></li>
+      <li><a href=""></a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Dark/Light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section - Mobile/iOS -->
+    <section class="hero-mobile">
+      <div class="container hero-mobile-content">
+        <i class="fas fa-mobile-alt" style="font-size: 3rem; color: #3b82f6; margin-bottom: 20px;"></i>
+        <h1>Mobile / iOS Gaming Hub</h1>
+        <p>The ultimate destination for mobile gamers — discover top-rated iOS titles, trending Android games, and cross-platform sensations. From casual hits to competitive esports.</p>
+        <div style="margin-top: 24px;">
+          <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Picks Section - Mobile -->
+    <section id="top-picks" class="section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-trophy"></i> Editor's Top Mobile Picks</h2>
+        <div class="games-grid">
+          <div class="game-card">
+		  <img src="Genshin.jpg" class="game-img">
+            <div class="game-icon"><i class="fas fa-star"></i></div>
+            <h3>Genshin Impact</h3>
+            <span class="game-genre">Action RPG / Open World</span>
+            <p>Android
+			<br>
+			-Minimum: Snapdragon 660 / Helio G88; 4 GB RAM; Android 10.0+
+			<br>
+			-Recommended: Snapdragon 855 / Dimensity 1000 / Kirin 980; 6 GB RAM; Android 12.0+
+			<br>
+			-Storage: 50 GB or more
+			<br>
+			<br>
+			iOS
+			<br>
+			Minimum: iPhone 8 Plus / iPhone X; iPad (8th Gen) or newer; iOS 14.0+
+			<br>
+			Recommended: iPhone 12 series / iPad (9th Gen) or newer; 4 GB RAM; iOS 14.0+
+			<br>
+			-Storage: 50 GB or more
+			</p>
+            <div class="game-stats">
+              <span><i class="fas fa-download"></i> 100M+ downloads</span>
+            </div>
+          </div>
+          <div class="game-card">
+		  <img src="CODM.webp" class="game-img">
+            <div class="game-icon"><i class="fas fa-crosshairs"></i></div>
+            <h3>Call of Duty: Mobile</h3>
+            <span class="game-genre">FPS / Battle Royale</span>
+            <p>Android
+			<br>
+			-Memory: At least 2 GB RAM.
+			<br>
+			-OS: Android 6.0 or higher.
+			<br>
+			-Processor: 1.5 GHz+ (Snapdragon 600 series or better)
+			<br>
+			-Storage: 7.58 GB+ (Initial install is smaller, updates add significant content)
+			<br>
+			<br>
+			iOS
+			<br>
+			-OS: iOS 15.0 or later
+			<br>
+			-Memory: At least 2 GB RAM
+			<br>
+			-Storage: 7.58 GB+ (Initial install is smaller, updates add significant content)
+			</p>
+            <div class="game-stats">
+              <span><i class="fas fa-globe"></i> 500M+ players</span>
+            </div>
+          </div>
+          <div class="game-card">
+		  <img src="Honkai.png" class="game-img">
+            <div class="game-icon"><i class="fas fa-dragon"></i></div>
+            <h3>Honkai: Star Rail</h3>
+            <span class="game-genre">Turn-based RPG</span>
+            <p>Android
+			<br>
+			-Recommended: Snapdragon 870, Dimensity 1300, Kirin 9000, or higher; 6GB RAM, Android 9 or higher.
+			<br>
+			-Minimum: Snapdragon 835, Dimensity 720, Kirin 810, or higher; 4GB RAM, Android 8 or higher.
+			<br>
+			<br>
+			iOS
+			<br>
+			-Recommended: iPhone 11 or newer; iPad with A13 chip (9th gen 2021) or newer.
+			<br>
+			-Minimum: iPhone 8 Plus, iPad with A10 processor, iOS 12.0 or higher
+			</p>
+            <div class="game-stats">
+              <span><i class="fas fa-star"></i> 4.9/5 Rating</span>
+              <span><i class="fas fa-globe"></i> 50M+ players</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Popular Mobile Games -->
+    <section id="all-games" class="section" style="background: rgba(59,130,246,0.02);">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-fire"></i> Most Played Mobile Games</h2>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-fist-raised"></i></div>
+            <h3>Mobile Legends: Bang Bang</h3>
+            <span class="game-genre">MOBA</span>
+            <p>Fast-paced 5v5 MOBA designed for mobile. Huge esports scene in Southeast Asia.</p>
+            <div class="game-stats"><span><i class="fas fa-users"></i> 100M+ monthly</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-robot"></i></div>
+            <h3>PUBG Mobile</h3>
+            <span class="game-genre">Battle Royale</span>
+            <p>The original mobile BR experience. Intense 100-player matches, constant events.</p>
+            <div class="game-stats"><span><i class="fas fa-chart-simple"></i> 1B+ downloads</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-crown"></i></div>
+            <h3>Among Us</h3>
+            <span class="game-genre">Social Deduction</span>
+            <p>Party phenomenon. Work together to find the impostor before it's too late.</p>
+            <div class="game-stats"><span><i class="fas fa-globe"></i> 500M+ players</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-mountain"></i></div>
+            <h3>Clash Royale</h3>
+            <span class="game-genre">Strategy / Card</span>
+            <p>Real-time PvP with Clash characters. Strategic deck building and quick battles.</p>
+            <div class="game-stats"><span><i class="fas fa-star"></i> 4.6/5 Rating</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-tree"></i></div>
+            <h3>Roblox</h3>
+            <span class="game-genre">Sandbox / Social</span>
+            <p>Millions of user-created experiences. Play, create, and socialize with friends.</p>
+            <div class="game-stats"><span><i class="fas fa-chart-line"></i> 200M+ active</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-mask"></i></div>
+            <h3>Arknight Enfeild</h3>
+            <span class="game-genre">Action RPG/ </span>
+            <p>You like explore, building, TD (tower defends) and factory? This game for you.</p>
+            <div class="game-stats"><span><i class="fas fa-fire"></i> #1 Trending April</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Mobile Games -->
+    <section id="upcoming" class="section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Most Anticipated Mobile Releases</h2>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-car"></i></div>
+            <h3>Warzone Mobile</h3>
+            <span class="game-genre">Battle Royale</span>
+            <p>Full Call of Duty: Warzone experience on mobile. 120-player matches, shared progression.</p>
+            <div class="game-stats"><span><i class="fas fa-clock"></i> Released 2024</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-dungeon"></i></div>
+            <h3>Zenless Zone Zero</h3>
+            <span class="game-genre">Action RPG</span>
+            <p>New urban fantasy ARPG from HoYoverse. Stylish combat and unique art direction.</p>
+            <div class="game-stats"><span><i class="fas fa-hourglass-half"></i> Coming 2025</span></div>
+          </div>
+          <div class="game-card">
+            <div class="game-icon"><i class="fas fa-dragon"></i></div>
+            <h3>Monster Hunter Outlanders</h3>
+            <span class="game-genre">Action RPG</span>
+            <p>Open-world Monster Hunter on mobile. Cross-play with other platforms.</p>
+            <div class="game-stats"><span><i class="fas fa-star"></i> Pre-register open</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><i class="fas fa-mobile-alt"></i> GamePulse Mobile Hub — Curated for iOS & Android gamers. © 2026</p>
+    <p style="margin-top: 12px;">📊 Data from App Store, Google Play, and community rankings</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    (function() {
+      const body = document.body;
+      const themeToggle = document.getElementById('themeToggleBtn');
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navList = document.getElementById('navList');
+      const backToTop = document.getElementById('backToTopBtn');
+      
+      // Theme logic
+      function setTheme(theme) {
+        if(theme === 'light') {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          localStorage.setItem('gamepulse-theme', 'light');
+          const icon = themeToggle.querySelector('i');
+          if(icon) icon.className = 'fas fa-sun';
+        } else {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          localStorage.setItem('gamepulse-theme', 'dark');
+          const icon = themeToggle.querySelector('i');
+          if(icon) icon.className = 'fas fa-moon';
+        }
+      }
+      
+      const saved = localStorage.getItem('gamepulse-theme');
+      if(saved === 'light') setTheme('light');
+      else setTheme('dark');
+      
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          body.classList.contains('light-mode') ? setTheme('dark') : setTheme('light');
+        });
+      }
+      
+      // Mobile menu
+      if(mobileBtn && navList) {
+        mobileBtn.addEventListener('click', () => navList.classList.toggle('mobile-open'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => navList.classList.remove('mobile-open'));
+        });
+      }
+      
+      // Back to top
+      if(backToTop) {
+        window.addEventListener('scroll', () => {
+          if(window.scrollY > 400) backToTop.classList.add('show');
+          else backToTop.classList.remove('show');
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+      
+      // Toast message
+      function showMessage(msg) {
+        const toast = document.createElement('div');
+        toast.innerText = msg;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '30px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = '#1e293b';
+        toast.style.color = '#f1f5f9';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = '48px';
+        toast.style.fontSize = '0.9rem';
+        toast.style.fontWeight = '500';
+        toast.style.zIndex = '9999';
+        toast.style.backdropFilter = 'blur(12px)';
+        toast.style.border = '1px solid #3b82f6';
+        if(body.classList.contains('light-mode')) {
+          toast.style.backgroundColor = '#ffffff';
+          toast.style.color = '#0f172a';
+        }
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 2200);
+      }
+      
+      // Game buttons interaction - Mobile specific messages
+      const btns = document.querySelectorAll('.card-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const game = btn.getAttribute('data-game') || 'game';
+          const messages = {
+            genshin: '🎮 Genshin Impact: Version 4.6 adds new region Fontaine! New characters coming soon.',
+            codm: '🔫 Call of Duty: Mobile: Season 4 live! New battle pass and Alcatraz map update.',
+            starrail: '⭐ Honkai: Star Rail: Version 2.1 adds Penacony story arc and new 5-star characters!',
+            mlbb: '⚔️ Mobile Legends: New hero "Cici" released. MPL season ongoing!',
+            pubgm: '🪖 PUBG Mobile: 3.0 update with new Rondo map and gameplay mechanics.',
+            amongus: '👾 Among Us: New hide-and-seek mode and cosmicube rewards available!',
+            clashroyale: '👑 Clash Royale: Evolution cards added. New ranked season started!',
+            roblox: '🎮 Roblox: The Hunt event live! Play featured games for exclusive items.',
+            squad: '⚡ Squad Busters: New world and characters added in latest patch!',
+            warzone: '📱 Warzone Mobile: Season 3 reloaded with new Verdansk POIs!',
+            zzz: '🎯 Zenless Zone Zero: Final beta testing. Pre-registration rewards available!',
+            mhout: '🏹 Monster Hunter Outlanders: Official gameplay trailer released. Sign up now!'
+          };
+          const msg = messages[game] || `✨ ${btn.closest('.game-card')?.querySelector('h3')?.innerText || 'Mobile game'} info: Check App Store for latest updates!`;
+          showMessage(msg);
+        });
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = this.getAttribute('href');
+          if(target === '#') return;
+          const el = document.querySelector(target);
+          if(el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth' });
+            if(navList?.classList.contains('mobile-open')) navList.classList.remove('mobile-open');
+          }
+        });
+      });
+      
+      if(window.scrollY > 400 && backToTop) backToTop.classList.add('show');
+    })();
+  </script>
+</body>
+</html>

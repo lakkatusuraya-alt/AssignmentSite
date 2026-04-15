@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LOL ;p Games | Trending & Popular Games</title>
+
+<!-- Google Fonts + modern fallback -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6 (free icons, optional but adds clean look) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<link rel="stylesheet" href="styles.css">
+<body class="dark-mode">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <i class="fas fa-gamepad" style="margin-right: 8px;"></i> LOL ;p Games
+      </div>
+      <div class="menu-icon" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navList">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#insights">Insights</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Dark/Light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero section with dynamic slideshow background -->
+    <section id="home" class="hero">
+      <div class="hero-slideshow" id="heroSlideshow">
+        <div class="slide" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/883/546/559/girls-und-panzer-anchovy-girls-und-panzer-darjeeling-nishizumi-maho-wallpaper-preview.jpg');"></div>
+        <div class="slide" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/960/1016/48/girls-und-panzer-nonna-girls-und-panzer-is-2-kv-2-wallpaper-preview.jpg');"></div>
+        <div class="slide" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/665/524/972/tank-girls-und-panzer-winter-forest-wallpaper-preview.jpg');"></div>
+        <div class="slide" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/915/560/921/anime-anime-girls-girls-und-panzer-m4-sherman-fury-wallpaper-preview.jpg');"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+      
+        <h1>Discover what's trending<br> in the gaming universe</h1>
+        <p>My guy you found the right website, just scroll down and clck it.</p>
+        <div style="margin-top: 28px;">
+          <button class="card-btn" id="exploreBtn" style="background:#3b82f6; color:white; border: none; padding: 12px 28px;">Explore now →</button>
+        </div>
+      </div>
+      
+      <div class="slideshow-dots" id="slideshowDots"></div>
+    </section>
+
+    <!-- Section 1: Popular games by platform -->
+	<section id="insights" class="section">
+      <div class="container">
+	  <h2 class="section-title"><i class="fas fa-tachometer-alt"></i> Popular games by platform</h2>
+        <div class="cards-grid" style="align-items: stretch;">
+          <div class="card" style="flex:2;">
+            <h3>What is a game genre?</h3> 
+			<p style="margin-top: 12px;"> A game genre is a category that groups games based on how they are played and what they are about. It helps people understand the type of experience a game offers.</p>
+         	<br>
+			<br>
+			<h3>What is a game</h3>
+			<p style="margin-top: 12px;"> A video game is a type of game that is played using an electronic device, such as a computer, console, smartphone, or tablet. It involves interacting with images on a screen, usually by using a controller, keyboard, mouse, or touch controls.</p>
+		  </div>
+        </div>
+      </div>
+    </section>
+	
+    <section id="platforms" class="section">
+      <div class="container">
+        
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fab fa-windows"></i></div>
+            <h3>PC / Laptop</h3>
+            <p>The ultimate destination for PC gamers — discover top-rated titles, hidden gems, and competitive masterpieces. From AAA blockbusters to indie sensations.</p>
+            <a href="PC.html" class="card-btn">Discover PC/Laptop →</a>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile / iOS</h3>
+            <p>The ultimate destination for mobile gamers — discover top-rated iOS titles, trending Android games, and cross-platform sensations. From casual hits to competitive esports.</p>
+            <a href="Mobile.html" class="card-btn" data-platform="mobile">Discover mobile →</a>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-fire"></i></div>
+            <h3>Trending this month</h3>
+            <p>🔥 April's hottest: <strong>Black Myth: Wukong</strong> (still viral), <strong>Final Fantasy VII Rebirth PC</strong> and <strong>Warzone Mobile</strong> update.</p>
+            <a href="trending.html" class="card-btn" data-platform="trending">See trending list →</a>
+          </div>
+        </div>
+        <div class="info-strip">
+          <i class="fas fa-globe" style="margin-right: 8px;"></i> Real-time data aggregated from Steam, App Store, Google Play & Twitch — updated weekly.
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Featured content -->
+    <section id="features" class="section" style="background: rgba(59,130,246,0.02); border-radius: 48px; margin: 20px 0;">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-star"></i> Featured expansions & roadmap</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-robot"></i></div>
+            <h3>🤖 AI Chat Bot</h3>
+            <p>Ask our gaming assistant: “What's trending in RPGs?” or “Best battle royale this month?” — live AI recommendations (coming in v2.0).</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+            <h3>All genres, all platforms</h3>
+            <p>From roguelikes, MMORPG, sim racing to cozy games — comprehensive genre guides and leaderboards across every ecosystem.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+            <h3>Other platforms</h3>
+            <p>PlayStation 5, Xbox Series X|S, Nintendo Switch, VR, and cloud gaming. We track popularity charts for console exclusives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Insights -->
+    <section id="insights" class="section">
+      <div class="container">
+        <div class="cards-grid" style="align-items: stretch;">
+          <div class="card" style="flex:2;">
+            <h3>📖 What defines a video game?</h3>
+            <p style="margin-top: 12px;">A video game is an interactive electronic experience combining visuals, sound, and rules. Players engage through controllers, keyboards, or touch — solving challenges, competing, or exploring narratives. From solo story-driven epics to massive online battles, games have evolved into the largest entertainment medium worldwide.</p>
+            <p class="mt-2"><strong>Industry insight:</strong> In 2025, global gaming revenue exceeded $200B, with mobile leading the charge.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><i class="fas fa-heart" style="color: #ef4444;"></i>  © Sensha-dō is the way of the heart.</p>
+    <p style="margin-top: 12px;">📊 Curated by Gaming Analysts • Follow us for weekly rankings</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    (function() {
+      // ========== SLIDESHOW LOGIC ==========
+      const slides = document.querySelectorAll('.slide');
+      const dotsContainer = document.getElementById('slideshowDots');
+      let currentSlide = 0;
+      let slideInterval;
+      const intervalTime = 5000;
+      
+      function createDots() {
+        if (!dotsContainer) return;
+        slides.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.classList.add('dot');
+          if (index === 0) dot.classList.add('active');
+          dot.setAttribute('data-slide', index);
+          dot.addEventListener('click', () => {
+            goToSlide(index);
+            resetInterval();
+          });
+          dotsContainer.appendChild(dot);
+        });
+      }
+      
+      function goToSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        slides[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+        currentSlide = index;
+      }
+      
+      function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) next = 0;
+        goToSlide(next);
+      }
+      
+      function startInterval() {
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+      
+      function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+      }
+      
+      if (slides.length > 0) {
+        slides.forEach((slide, idx) => {
+          if (idx === 0) slide.classList.add('active');
+          else slide.classList.remove('active');
+        });
+        createDots();
+        startInterval();
+      }
+      
+      // ========== THEME TOGGLE (Dark/Light Mode) ==========
+      const body = document.body;
+      const themeToggleBtn = document.getElementById('themeToggleBtn');
+      
+      function setTheme(theme) {
+        if (theme === 'light') {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          localStorage.setItem('gamepulse-theme', 'light');
+          if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-sun';
+          }
+        } else {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          localStorage.setItem('gamepulse-theme', 'dark');
+          if (themeToggleBtn) {
+            const icon = themeToggleBtn.querySelector('i');
+            if (icon) icon.className = 'fas fa-moon';
+          }
+        }
+      }
+      
+      const savedTheme = localStorage.getItem('gamepulse-theme');
+      if (savedTheme === 'light') setTheme('light');
+      else setTheme('dark');
+      
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          const isLight = body.classList.contains('light-mode');
+          isLight ? setTheme('dark') : setTheme('light');
+        });
+      }
+      
+      // ========== EXPLORE BUTTON (scroll to platforms section) ==========
+      const exploreBtn = document.getElementById('exploreBtn');
+      if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+          const platformsSection = document.getElementById('platforms');
+          if (platformsSection) {
+            platformsSection.scrollIntoView({ behavior: 'smooth' });
+            // Show a small toast notification
+            showMessage('✨ Explore trending games by platform!');
+          }
+        });
+      }
+      
+      // ========== BACK TO TOP BUTTON ==========
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          showMessage('✨ Back to the top!');
+        });
+      }
+      
+      // ========== TOAST MESSAGE FUNCTION ==========
+      function showMessage(msg) {
+        const toast = document.createElement('div');
+        toast.innerText = msg;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '30px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = '#1e293b';
+        toast.style.color = '#f1f5f9';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = '48px';
+        toast.style.fontSize = '0.9rem';
+        toast.style.fontWeight = '500';
+        toast.style.zIndex = '9999';
+        toast.style.backdropFilter = 'blur(12px)';
+        toast.style.border = '1px solid #3b82f6';
+        toast.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+        if (body.classList.contains('light-mode')) {
+          toast.style.backgroundColor = '#ffffff';
+          toast.style.color = '#0f172a';
+        }
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          setTimeout(() => toast.remove(), 300);
+        }, 2200);
+      }
+      
+      // ========== CARD BUTTONS (Mobile & Trending) ==========
+      const mobileBtnCard = document.querySelector('[data-platform="mobile"]');
+      const trendingBtnCard = document.querySelector('[data-platform="trending"]');
+      
+      if (mobileBtnCard) {
+        mobileBtnCard.addEventListener('click', () => showMessage('📱 Mobile leaders: Genshin Impact, Honor of Kings, and Mobile Legends.'));
+      }
+      if (trendingBtnCard) {
+        trendingBtnCard.addEventListener('click', () => showMessage('🔥 April trending: Black Myth: Wukong dominates, plus Stellar Blade.'));
+      }
+      
+      // ========== MOBILE MENU TOGGLE ==========
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navList = document.getElementById('navList');
+      
+      if (mobileBtn && navList) {
+        mobileBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          navList.classList.toggle('mobile-open');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => navList.classList.remove('mobile-open'));
+        });
+      }
+      
+      // ========== SMOOTH SCROLL FOR NAVIGATION LINKS ==========
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            e.preventDefault();
+            targetElem.scrollIntoView({ behavior: 'smooth' });
+            if (navList && navList.classList.contains('mobile-open')) {
+              navList.classList.remove('mobile-open');
+            }
+          }
+        });
+      });
+      
+      // Initial check for back to top visibility
+      if (window.scrollY > 400 && backToTopBtn) backToTopBtn.classList.add('show');
+    })();
+  </script>
+</body>
+</html>
